@@ -22,6 +22,7 @@ const onReady = function(instance) {
 
 const onEvents = {
     'change': function() {
+        // the 'this' variable can get echarts instance
         console.log(this.value());
     }
 };
