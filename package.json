@@ -1,0 +1,37 @@
+{
+  "name": "react-simplemde-v1",
+  "title": "react-simplemde-v1",
+  "description": "React component wrap for SimpleMDE Markdown Editor(v1.x)",
+  "version": "0.0.1",
+  "main": "lib/index.jsx",
+  "files": [
+    "lib/index.jsx"
+  ],
+  "homepage": "https://github.com/xlsdg/react-simplemde-v1",
+  "author": "xLsDg <xlsdg@qq.com> (https://blog.xlsdg.org/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xlsdg/react-simplemde-v1.git"
+  },
+  "keywords": [
+    "react",
+    "markdown",
+    "editor",
+    "simplemde",
+    "react-simplemde",
+    "react-simplemde-v1",
+    "library"
+  ],
+  "bugs": {
+    "url": "https://github.com/xlsdg/react-simplemde-v1/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "lodash.isequal": "latest",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "simplemde": "latest"
+  },
+  "devDependencies": {},
+  "scripts": {}
+}
