@@ -66,9 +66,8 @@ class ISimpleMDE extends React.Component {
   }
   shouldComponentUpdate(nextProps, nextState) {
     const that = this;
-    console.log('shouldComponentUpdate', that.props, nextProps, that.state, nextState);
+    // console.log('shouldComponentUpdate', that.props, nextProps, that.state, nextState);
     return (!_isEqual(nextProps.option, that.props.option));
-    // return true;
   }
   componentWillUpdate(nextProps, nextState) {
     const that = this;
