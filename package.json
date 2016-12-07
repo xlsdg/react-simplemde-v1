@@ -2,7 +2,7 @@
   "name": "react-simplemde-v1",
   "title": "react-simplemde-v1",
   "description": "React component wrap for SimpleMDE Markdown Editor(v1.x)",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "lib/index.jsx",
   "files": [
     "lib/index.jsx"
