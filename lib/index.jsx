@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SimpleMDE from 'simplemde';
+import SimpleMDE from 'simplemde/dist/simplemde.min.js';
 import _assign from 'lodash.assign';
+import _isEqual from 'lodash.isequal';
 
 
-import 'simplemde/src/css/simplemde.css';
+import 'simplemde/dist/simplemde.min.css';
 
 
 class ISimpleMDE extends React.Component {
@@ -39,8 +40,9 @@ class ISimpleMDE extends React.Component {
     // console.log('_bind');
     const _on = function(name, func) {
       if (typeof func === 'function') {
-        instance.off(name, func);
-        instance.on(name, func);
+        func = func.bind(instance);
+        instance.codemirror.off(name, func);
+        instance.codemirror.on(name, func);
       }
     };
     for (let e in that.props.onEvents) {
@@ -64,9 +66,9 @@ class ISimpleMDE extends React.Component {
   }
   shouldComponentUpdate(nextProps, nextState) {
     const that = this;
-    // console.log('shouldComponentUpdate', that.props, nextProps, that.state, nextState);
-    // return (!_.isEqual(nextProps.option, that.props.option));
-    return true;
+    console.log('shouldComponentUpdate', that.props, nextProps, that.state, nextState);
+    return (!_isEqual(nextProps.option, that.props.option));
+    // return true;
   }
   componentWillUpdate(nextProps, nextState) {
     const that = this;
@@ -98,7 +100,6 @@ ISimpleMDE.propTypes = {
   style: React.PropTypes.object,
   option: React.PropTypes.object.isRequired,
   onReady: React.PropTypes.func,
-  loading: React.PropTypes.bool,
   text: React.PropTypes.string,
   onEvents: React.PropTypes.object
 };
@@ -107,7 +108,6 @@ ISimpleMDE.defaultProps = {
   className: 'react-simplemde',
   style: { width: '100%', height: '100%' },
   onReady: function(instance) {},
-  loading: false,
   text: '',
   onEvents: {}
 };
