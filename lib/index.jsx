@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SimpleMDE from 'simplemde';
-import _ from 'lodash';
+import _assign from 'lodash.assign';
 
 
 import 'simplemde/src/css/simplemde.css';
@@ -15,15 +15,18 @@ class ISimpleMDE extends React.Component {
       instance: null
     };
     this._init = this._init.bind(this);
+    this._bind = this._bind.bind(this);
   }
   _init() {
     const that = this;
     // console.log('_init');
     if (!that.state.instance) {
       const dom = ReactDOM.findDOMNode(that);
-      const instance = new SimpleMDE({
+      const option = _assign({}, that.props.option, {
         element: dom
       });
+      const instance = new SimpleMDE(option);
+      that._bind(instance);
       instance.value(that.props.text);
       that.setState({
         instance: instance
@@ -31,9 +34,20 @@ class ISimpleMDE extends React.Component {
       that.props.onReady(instance);
     }
   }
-  _update() {
+  _bind(instance) {
     const that = this;
-    // console.log('_update');
+    // console.log('_bind');
+    const _on = function(name, func) {
+      if (typeof func === 'function') {
+        instance.off(name, func);
+        instance.on(name, func);
+      }
+    };
+    for (let e in that.props.onEvents) {
+      if (Array.hasOwnProperty.call(that.props.onEvents, e)) {
+        _on(e.toLowerCase(), that.props.onEvents[e]);
+      }
+    }
   }
   componentWillMount() {
     const that = this;
@@ -51,7 +65,8 @@ class ISimpleMDE extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
     const that = this;
     // console.log('shouldComponentUpdate', that.props, nextProps, that.state, nextState);
-    return (!_.isEqual(nextProps.option, that.props.option));
+    // return (!_.isEqual(nextProps.option, that.props.option));
+    return true;
   }
   componentWillUpdate(nextProps, nextState) {
     const that = this;
@@ -64,6 +79,10 @@ class ISimpleMDE extends React.Component {
   componentWillUnmount() {
     const that = this;
     // console.log('componentWillUnmount', that.props, that.state);
+    that.state.instance.toTextArea();
+    // that.setState({
+    //   instance: null
+    // });
   }
   render() {
     const that = this;
@@ -80,15 +99,17 @@ ISimpleMDE.propTypes = {
   option: React.PropTypes.object.isRequired,
   onReady: React.PropTypes.func,
   loading: React.PropTypes.bool,
-  text: React.PropTypes.string
+  text: React.PropTypes.string,
+  onEvents: React.PropTypes.object
 };
 
 ISimpleMDE.defaultProps = {
-  className: 'react-echarts',
+  className: 'react-simplemde',
   style: { width: '100%', height: '100%' },
   onReady: function(instance) {},
   loading: false,
-  text: ''
+  text: '',
+  onEvents: {}
 };
 
 

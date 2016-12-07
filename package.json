@@ -27,7 +27,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "lodash": "latest",
+    "lodash.assign": "latest",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "simplemde": "latest"
