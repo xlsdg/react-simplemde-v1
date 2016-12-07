@@ -22,7 +22,7 @@ const onReady = function(instance) {
 
 const onEvents = {
     'change': function() {
-        // the 'this' variable can get echarts instance
+        // the 'this' variable can get SimpleMDE instance
         console.log(this.value());
     }
 };
