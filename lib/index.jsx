@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import SimpleMDE from 'simplemde/dist/simplemde.min.js';
 import _assign from 'lodash.assign';
 import _isEqual from 'lodash.isequal';
@@ -52,7 +53,7 @@ class ISimpleMDE extends React.Component {
     }
   }
   componentWillMount() {
-    const that = this;
+    // const that = this;
     // console.log('componentWillMount', that.props, that.state);
   }
   componentDidMount() {
@@ -61,7 +62,7 @@ class ISimpleMDE extends React.Component {
     that._init();
   }
   componentWillReceiveProps(nextProps) {
-    const that = this;
+    // const that = this;
     // console.log('componentWillReceiveProps', that.props, nextProps);
   }
   shouldComponentUpdate(nextProps, nextState) {
@@ -70,11 +71,11 @@ class ISimpleMDE extends React.Component {
     return (!_isEqual(nextProps.option, that.props.option));
   }
   componentWillUpdate(nextProps, nextState) {
-    const that = this;
+    // const that = this;
     // console.log('componentWillUpdate', that.props, nextProps, that.state, nextState);
   }
   componentDidUpdate(prevProps, prevState) {
-    const that = this;
+    // const that = this;
     // console.log('componentDidUpdate', prevProps, that.props, prevState, that.state);
   }
   componentWillUnmount() {
@@ -95,12 +96,12 @@ class ISimpleMDE extends React.Component {
 }
 
 ISimpleMDE.propTypes = {
-  className: React.PropTypes.string,
-  style: React.PropTypes.object,
-  option: React.PropTypes.object.isRequired,
-  onReady: React.PropTypes.func,
-  text: React.PropTypes.string,
-  onEvents: React.PropTypes.object
+  className: PropTypes.string,
+  style: PropTypes.object,
+  option: PropTypes.object.isRequired,
+  onReady: PropTypes.func,
+  text: PropTypes.string,
+  onEvents: PropTypes.object
 };
 
 ISimpleMDE.defaultProps = {
