@@ -1,39 +1,50 @@
 {
   "name": "react-simplemde-v1",
-  "title": "react-simplemde-v1",
-  "description": "React component wrap for SimpleMDE Markdown Editor(v1.x)",
-  "version": "0.0.7",
-  "main": "lib/index.jsx",
-  "files": [
-    "lib/index.jsx"
+  "version": "1.0.0",
+  "description": "React.js(v16.x+) component wrap for SimpleMDE Markdown Editor(v1.x+)",
+  "keywords": [
+    "simplemde",
+    "library",
+    "react",
+    "react-simplemde",
+    "react-simplemde-v1"
   ],
   "homepage": "https://github.com/xlsdg/react-simplemde-v1",
-  "author": "xLsDg <xlsdg@qq.com> (https://blog.xlsdg.org/)",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/xlsdg/react-simplemde-v1.git"
-  },
-  "keywords": [
-    "react",
-    "markdown",
-    "editor",
-    "simplemde",
-    "react-simplemde",
-    "react-simplemde-v1",
-    "library"
-  ],
   "bugs": {
     "url": "https://github.com/xlsdg/react-simplemde-v1/issues"
   },
   "license": "MIT",
-  "dependencies": {
-    "lodash.assign": "latest",
-    "lodash.isequal": "latest",
-    "prop-types": "^15.5.6",
-    "react": "^15.5.3",
-    "react-dom": "^15.5.3",
-    "simplemde": "latest"
+  "author": "xLsDg <xlsdg@qq.com> (https://blog.xlsdg.org/)",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "dist/react-simplemde.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xlsdg/react-simplemde-v1.git"
   },
-  "devDependencies": {},
-  "scripts": {}
+  "scripts": {
+    "build": "webpack --progress --hide-modules"
+  },
+  "dependencies": {
+    "lodash": "latest"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-lodash": "^3.3.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "lodash-webpack-plugin": "^0.11.4",
+    "webpack": "^3.10.0"
+  },
+  "peerDependencies": {
+    "simplemde": "*",
+    "prop-types": "*",
+    "react": "*",
+    "react-dom": "*"
+  },
+  "title": "react-simplemde-v1"
 }
