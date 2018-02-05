@@ -1,6 +1,6 @@
 {
   "name": "react-simplemde-v1",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React.js(v16.x+) component wrap for SimpleMDE Markdown Editor(v1.x+)",
   "keywords": [
     "simplemde",
