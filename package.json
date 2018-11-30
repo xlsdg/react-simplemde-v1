@@ -1,7 +1,41 @@
 {
-  "name": "react-simplemde-v1",
-  "version": "1.0.2",
+  "author": "xLsDg <xlsdg@qq.com> (https://blog.xlsdg.org/)",
+  "browser": "dist/simplemde.js",
+  "bugs": {
+    "url": "https://github.com/xlsdg/react-simplemde-v1/issues"
+  },
+  "dependencies": {
+    "lodash-es": "latest"
+  },
   "description": "React.js(v16.x+) component wrap for SimpleMDE Markdown Editor(v1.x+)",
+  "devDependencies": {
+    "bili": "^3.4.2",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-alloy": "^1.4.2",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "prettier": "^1.15.3",
+    "rollup-plugin-prettier": "^0.5.0",
+    "rollup-plugin-vue": "^4.3.2",
+    "stylelint": "^9.9.0",
+    "stylelint-config-prettier": "^4.0.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-order": "^2.0.0",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "homepage": "https://github.com/xlsdg/react-simplemde-v1",
+  "jsdelivr": "dist/simplemde.min.js",
   "keywords": [
     "simplemde",
     "library",
@@ -9,45 +43,25 @@
     "react-simplemde",
     "react-simplemde-v1"
   ],
-  "homepage": "https://github.com/xlsdg/react-simplemde-v1",
-  "bugs": {
-    "url": "https://github.com/xlsdg/react-simplemde-v1/issues"
-  },
   "license": "MIT",
-  "author": "xLsDg <xlsdg@qq.com> (https://blog.xlsdg.org/)",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "main": "dist/react-simplemde.js",
+  "main": "dist/simplemde.cjs.js",
+  "module": "dist/simplemde.es.js",
+  "name": "react-simplemde-v1",
+  "peerDependencies": {
+    "react": "latest",
+    "simplemde": "latest"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/xlsdg/react-simplemde-v1.git"
   },
   "scripts": {
-    "release:patch": "npm version patch && npm publish",
-    "release:minor": "npm version minor && npm publish",
+    "build": "bili",
     "release:major": "npm version major && npm publish",
-    "build": "webpack --progress --hide-modules"
+    "release:minor": "npm version minor && npm publish",
+    "release:patch": "npm version patch && npm publish"
   },
-  "dependencies": {
-    "lodash": "latest"
-  },
-  "devDependencies": {
-    "babel-core": "latest",
-    "babel-loader": "^7.1.5",
-    "babel-plugin-lodash": "latest",
-    "babel-preset-env": "latest",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "lodash-webpack-plugin": "latest",
-    "webpack": "^3.12.0"
-  },
-  "peerDependencies": {
-    "simplemde": "latest",
-    "prop-types": "latest",
-    "react": "latest",
-    "react-dom": "latest"
-  },
-  "title": "react-simplemde-v1"
+  "source": "src/simplemde.jsx",
+  "unpkg": "dist/simplemde.min.js",
+  "version": "1.0.2"
 }

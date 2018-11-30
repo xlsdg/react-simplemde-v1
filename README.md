@@ -8,36 +8,34 @@
 $ npm install --save simplemde react-simplemde-v1
 ```
 
-
 ## Usage
 
 ``` javascript
 import ISimpleMDE from 'react-simplemde-v1';
 import 'simplemde/dist/simplemde.min.css';
 
-const option = {};
+export default () => {
+  const option = {};
 
-const onReady = function(instance) {
-  console.log(instance.value());
-};
+  const onReady = (instance) => console.log(instance.value());
 
-const onEvents = {
-  'change': function() {
-    // the 'this' variable can get SimpleMDE instance
-    console.log(this.value());
-  }
-};
+  const onEvents = {
+    'change': function() {
+      // the 'this' variable can get SimpleMDE instance
+      console.log(this.value());
+    }
+  };
 
-return (
-  <ISimpleMDE
-    option={option}
-    text={'Hello World!!!'}
-    onReady={onReady}
-    onEvents={onEvents}
-  />
-);
+  return (
+    <ISimpleMDE
+      option={option}
+      text={'Hello World!!!'}
+      onReady={onReady}
+      onEvents={onEvents}
+    />
+  );
+}
 ```
-
 
 ## propTypes
 
@@ -52,7 +50,6 @@ return (
 
 [Read More](https://github.com/NextStepWebs/simplemde-markdown-editor)
 
-
 ## defaultProps
 
 ``` javascript
@@ -62,10 +59,9 @@ return (
     height: '100%'
   },
   text: '',
-  onReady: function(instance) {},
+  onReady: instance => {},
   onEvents: {}
 ```
-
 
 # License
 
