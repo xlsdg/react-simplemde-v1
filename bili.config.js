@@ -8,16 +8,16 @@ module.exports = {
   moduleName: 'ISimpleMDE',
   global: {
     'react': 'React',
-    'simplemde': 'Simplemde'
+    'simplemde': 'SimpleMDE'
   },
   filename: '[name][suffix].js',
   name: 'simplemde',
   // inline: false,
   // cwd: '',
-  external: [
-    'react',
-    'simplemde'
-  ],
+  // external: [
+  //   'react',
+  //   'simplemde'
+  // ],
   banner: false,
   postcss: {
     modules: true

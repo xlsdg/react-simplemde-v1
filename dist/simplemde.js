@@ -3,7 +3,7 @@
     ? (module.exports = factory(require('react'), require('simplemde')))
     : typeof define === 'function' && define.amd
     ? define(['react', 'simplemde'], factory)
-    : (global.ISimpleMDE = factory(global.React, global.Simplemde));
+    : (global.ISimpleMDE = factory(global.React, global.SimpleMDE));
 })(this, function(React, SimpleMDE) {
   'use strict';
 
